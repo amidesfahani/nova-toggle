@@ -32,6 +32,12 @@ export default {
         value: false,
     }),
 
+    computed: {
+        trueValue() {
+            return +Boolean(this.value)
+        }
+    },
+
     mounted() {
         this.value = this.field.value || false
 
@@ -43,10 +49,7 @@ export default {
     methods: {
         toggle() {
             this.value = !this.value
-        },
-        trueValue() {
-            return +Boolean(this.value)
-        },
+        }
     },
 }
 </script>
